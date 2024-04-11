@@ -28,7 +28,7 @@ void SACA_K(unsigned char *s, unsigned int *SA, unsigned int n,
 
 
 
-unsigned int locate(unsigned int sp, unsigned int ep, unsigned int* locates)
+void locate(unsigned int sp, unsigned int ep, unsigned int* locates)
 {
 
 
@@ -855,7 +855,7 @@ unsigned int indenpendent_creadte_index(unsigned int text_length, char** input_r
 
 
 
-unsigned int init_bitmapper_index_params()
+void init_bitmapper_index_params()
 {
 	unsigned int i;
 

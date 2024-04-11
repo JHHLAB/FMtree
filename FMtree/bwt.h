@@ -113,7 +113,7 @@ unsigned int locate_debug(char* pattern, unsigned int sp, unsigned int ep,
 unsigned int locate_less_than_4(char* pattern, unsigned int sp, unsigned int ep,
 	unsigned int sp1, unsigned int ep1, unsigned int* locates, unsigned int length_read, unsigned int* occurrences);
 
-unsigned int init_bitmapper_index_params();
+void init_bitmapper_index_params();
 
 unsigned int indenpendent_creadte_index(unsigned int text_length, char** input_refer, unsigned int compress_sa, char* filename);
 

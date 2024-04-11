@@ -95,7 +95,7 @@ typedef struct bwt_index
 
 extern bwt_index bitmapper_index_params;
 
-unsigned int init_bitmapper_index_params();
+void init_bitmapper_index_params();
 
 unsigned int indenpendent_creadte_index(unsigned int text_length, char** input_refer, unsigned int compress_sa, char* filename);
 
@@ -317,7 +317,7 @@ inline unsigned int get_sa_API(unsigned int line, bwt_string_type *bwt, unsigned
 }
 
 
-unsigned int locate(unsigned int sp, unsigned int ep, unsigned int* locates);
+void locate(unsigned int sp, unsigned int ep, unsigned int* locates);
 
 #endif
 

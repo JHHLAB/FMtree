@@ -1787,7 +1787,7 @@ unsigned int indenpendent_creadte_index(unsigned int text_length, char** input_r
 
 
 
-unsigned int init_bitmapper_index_params()
+void init_bitmapper_index_params()
 {
 	unsigned int i;
 
@@ -3648,7 +3648,7 @@ inline void bwt_find_occ_all_sp_ep_optimal_back_up(unsigned int sp, unsigned int
 }
 
 
-inline unsigned int enqueue_FMtree(unsigned int sp, unsigned int ep, unsigned int layer)
+inline void enqueue_FMtree(unsigned int sp, unsigned int ep, unsigned int layer)
 {
 	unsigned int queue_point = bitmapper_index_params.FMtree_queue_end_point * 3;
 	bitmapper_index_params.FMtree_queue[queue_point++] = sp;
@@ -3659,7 +3659,7 @@ inline unsigned int enqueue_FMtree(unsigned int sp, unsigned int ep, unsigned in
 	bitmapper_index_params.FMtree_queue_end_point++;
 }
 
-inline unsigned int dequeue_FMtree(unsigned int* sp, unsigned int* ep, unsigned int* layer)
+inline void dequeue_FMtree(unsigned int* sp, unsigned int* ep, unsigned int* layer)
 
 {
 
@@ -3682,7 +3682,7 @@ inline unsigned int queue_length_FMtree()
 	return (bitmapper_index_params.FMtree_queue_end_point - bitmapper_index_params.FMtree_queue_start_point);
 }
 
-inline unsigned int empty_queue_FMtree()
+inline void empty_queue_FMtree()
 {
 	bitmapper_index_params.FMtree_queue_start_point = 0;
 	bitmapper_index_params.FMtree_queue_end_point = 0;
@@ -4059,6 +4059,7 @@ unsigned int locate(char* pattern, unsigned int sp, unsigned int ep,
 
 
 	(*occurrences) = tmp_SA_length;
+  return 1;
 }
 
 
@@ -4378,6 +4379,7 @@ unsigned int locate_debug(char* pattern, unsigned int sp, unsigned int ep,
 
 
 	(*occurrences) = tmp_SA_length;
+  return 1;
 }
 
 
@@ -4612,6 +4614,7 @@ unsigned int locate_less_than_4(char* pattern, unsigned int sp, unsigned int ep,
 
 
 	(*occurrences) = tmp_SA_length;
+  return 1;
 }
 
 
