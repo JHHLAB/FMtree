@@ -1,0 +1,3 @@
+[submodule "lib/kISS"]
+	path = lib/kISS
+	url = https://github.com/jhhung/kiss
