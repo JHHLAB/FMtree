@@ -388,6 +388,7 @@ void search_from_bwt_more_than_3()
 
 
 	long long number_of_locations = 0;
+  uint64_t location_checksum = 0;
 
 
 
@@ -413,7 +414,7 @@ void search_from_bwt_more_than_3()
 	for (i = 1; i <= num_reads; i++)
 	{
 
-		if (i % 10000 == 0)
+		if (i % 1000000 == 0)
 		{
 			fprintf(stdout, "i=%llu\n", i);
 		}
@@ -464,6 +465,8 @@ void search_from_bwt_more_than_3()
 		**/
 
 		
+		for (t = 0; t<bot - top; t++)
+      location_checksum += locates[t];
 
 
 		free(locates);
@@ -499,6 +502,7 @@ void search_from_bwt_more_than_3()
 
 	fprintf(stdout, "number of matched locations=%ld\n", number_of_locations);
 
+	fprintf(stdout, "location checksum=%llu\n", location_checksum);
 
 	fprintf(stdout, "************************************************\n");
 
@@ -881,6 +885,7 @@ void search_from_bwt_less_than_4()
 
 
 	long long number_of_locations = 0;
+  uint64_t location_checksum = 0;
 
 
 
@@ -906,7 +911,7 @@ void search_from_bwt_less_than_4()
 	for (i = 1; i <= num_reads; i++)
 	{
 
-		if (i % 10000 == 0)
+		if (i % 1000000 == 0)
 		{
 			fprintf(stdout, "i=%llu\n", i);
 		}
@@ -955,18 +960,15 @@ void search_from_bwt_less_than_4()
 		}
 		**/
 
-
+		for (t = 0; t<bot - top; t++)
+      location_checksum += locates[t];
 
 
 		free(locates);
 
 
 
-
-
-
 		number_of_locations = number_of_locations + tmp_SA_length;
-
 
 
 
@@ -990,6 +992,8 @@ void search_from_bwt_less_than_4()
 	fprintf(stdout, "searching Time: %5.3f seconds\n", duration);
 
 	fprintf(stdout, "number of matched locations=%ld\n", number_of_locations);
+
+	fprintf(stdout, "location checksum=%llu\n", location_checksum);
 
 
 	fprintf(stdout, "************************************************\n");
