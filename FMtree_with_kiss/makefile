@@ -13,11 +13,11 @@ ALL_OPS = tryall core Makeours Clear
 ALL:$(ALL_OPS)
 
 core:
-	$(CC) -c saca-k.cpp bwt.cpp $(CC_OPTION)
+	$(CC) -c bwt.cpp $(CC_OPTION)
 tryall:
 	$(CC) -c main.cpp $(CC_OPTION)
 Makeours:
-	$(CC) -o FMtree saca-k.o main.o bwt.o $(CC_OPTION)
+	$(CC) -o FMtree main.o bwt.o $(CC_OPTION)
 Clear:
 	rm *.o
      
